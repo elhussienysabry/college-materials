@@ -3,42 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIS Hub</title>
+    <title>BIS Hub </title>
+    <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="brand">
-            <h1>BIS Hub</h1>
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="sidebar">
+        <!-- Logo Section -->
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7V12C2 16.5 12 22 12 22S22 16.5 22 12V7L12 2Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h1>BIS Hub</h1>
+            </div>
+            <button id="sidebar-close" class="sidebar-close" aria-label="Close sidebar">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#management-accounting" class="nav-link active">Management Accounting</a></li>
-                <li><a href="#analysis-design" class="nav-link">Analysis and Design System</a></li>
-                <li><a href="#international-economic" class="nav-link">International Economic</a></li>
-                <li><a href="#international-accounting" class="nav-link">International Accounting</a></li>
-                <li><a href="#hr-management" class="nav-link">HR Management</a></li>
-                <li><a href="#programming-2" class="nav-link">Programming 2</a></li>
-                <li><a href="#statistical-analysis" class="nav-link">Statistical Analysis</a></li>
+
+        <!-- Sidebar Navigation Links (Dynamically Rendered) -->
+        <nav class="sidebar-nav">
+            <ul id="subjects-list">
+                <!-- Subjects will be dynamically rendered here by JavaScript -->
             </ul>
         </nav>
 
-        <!-- Dark mode toggle -->
-        <div class="controls">
-            <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                <!-- sun / moon icons (SVG) -->
-                <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M12 4V2M12 22v-2M4.93 4.93L3.51 3.51M20.49 20.49l-1.42-1.42M2 12H4M20 12h2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
+        <!-- Sidebar Footer with Theme & Controls -->
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <label for="theme-select" class="theme-label">Theme</label>
+                <select id="theme-select" class="theme-select">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="gold">Gold & Black</option>
+                    <option value="blue">Blue Modern</option>
+                    <option value="purple">Purple Gradient</option>
+                </select>
+            </div>
         </div>
+    </aside>
+
+    <!-- Sidebar Toggle Button (Header) -->
+    <header class="top-header">
+        <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="header-spacer"></div>
     </header>
 
-    <main class="container">
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
         <section id="management-accounting" class="subject-content active">
             <h2>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2zm14 10H6V7h12v10zM10 11h4v2h-4v-2z" fill="currentColor"/></svg>
@@ -56,23 +80,32 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 1: Introduction</span>
-                            <a href="https://drive.google.com/file/d/1HJ9FNEkz4TtqiGQct-DzkpfbUREB-LXK/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <a href="https://drive.google.com/file/d/1HJ9FNEkz4TtqiGQct-DzkpfbUREB-LXK/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 2: CVP</span>
-                            <a href="https://drive.google.com/file/d/17Y3bAonjm1oRT08Mto5BOzUigPjlzAgL/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <a href="https://drive.google.com/file/d/17Y3bAonjm1oRT08Mto5BOzUigPjlzAgL/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 3: Planning Budgets</span>
-                            <a href="https://drive.google.com/file/d/1HJ9FNEkz4TtqiGQct-DzkpfbUREB-LXK/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <a href="https://drive.google.com/file/d/1dtdN2upPPuSEdxhvPas9WzMtz6g-hwBX/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 4: Segment Reporting, Profitability Analysis & Decentralization</span>
+                            <a href="https://drive.google.com/file/d/1dWZ_Eq2lsaikvopJ3nJUiwIAFjOk_IWq/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 5: Financial Statement Analysis</span>
+                            <a href="https://drive.google.com/file/d/1jfk8JRjH1zGwfHsYwe_O1jcstS2tArB8/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
+                        </div>
+                        
                     </div>
 
                     <h4>Books & Notes</h4>
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Main book</span>
-                            <a href="https://drive.google.com/file/d/1olTKHcER0k_yPS7yhd2u0GYw8fsT-b2l/view?usp=sharing" class="lecture-btn">Go to Book</a>
+                            <a href="https://drive.google.com/file/d/1olTKHcER0k_yPS7yhd2u0GYw8fsT-b2l/view?usp=sharing" class="lecture-btn" target="_blank">Go to Book</a>
                         </div>
                     </div>
                 </div>
@@ -85,15 +118,23 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 1</span>
-                            <a href="https://chatper1manacc.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://chatper1manacc.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 2</span>
-                            <a href="https://ch2managacc.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://ch2managacc.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 3</span>
-                            <a href="https://ch3managacc.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://ch3managacc.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 4</span>
+                            <a href="https://chat.z.ai/space/d19dg32n6q21-art" class="lecture-btn" target="_blank">Click Here</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 5</span>
+                            <a href="https://chat.z.ai/space/k1ddc3a4ehp0-art" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -116,16 +157,28 @@
                      <h4>Lectures</h4>
                     <div class="lecture-list">
                         <div class="lecture-item">
-                            <span class="lecture-name" contenteditable="true">Chapter 1 </span>
-                            <a href="https://drive.google.com/file/d/1s_klnlNd7GZeyhKLFw0OKR-MqmD7NpzK/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <span class="lecture-name" contenteditable="true">Lecture 1 </span>
+                            <a href="https://drive.google.com/file/d/1s_klnlNd7GZeyhKLFw0OKR-MqmD7NpzK/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 2</span>
-                            <a href="https://drive.google.com/file/d/1M_tjf_El4AlQLRECHPfEuAOrBVVOx_2U/view?usp=sharing" class="lecture-btn">Go to Lecture</a>
+                            <a href="https://drive.google.com/file/d/1M_tjf_El4AlQLRECHPfEuAOrBVVOx_2U/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
                         </div>
                         <div class="lecture-item">
-                            <span class="lecture-name" contenteditable="true">Lecture 3,4 </span>
-                            <a href="https://drive.google.com/file/d/1aXcmRk1y0asXxfsNiiX9l0rWFKx9Ljko/view?usp=sharing" class="lecture-btn">Go to Lecture</a>
+                            <span class="lecture-name" contenteditable="true">Lecture 3 </span>
+                            <a href="https://drive.google.com/file/d/1aXcmRk1y0asXxfsNiiX9l0rWFKx9Ljko/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Lecture 4 </span>
+                            <a href="https://drive.google.com/file/d/1gI1wJ-VeXRwsuhujXBJg4reuynEV-wcd/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Lecture 5 </span>
+                            <a href="https://drive.google.com/file/d/1dBC19mEtuDWqKCp5m4EyWLJb2cO2NLbF/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Lecture 6 </span>
+                            <a href="https://drive.google.com/file/d/1lfJzvh8ZWwLNXUIlEFr6NyvipWrrILom/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
                         </div>
                     </div>
 
@@ -133,7 +186,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Main book</span>
-                            <a href="#" class="lecture-btn">NA</a>
+                            <a href="https://drive.google.com/file/d/1Kiwi2GuuUGHnOPMybUEq2bfgpGbS92LK/view?usp=sharing" class="lecture-btn" target="_blank">Go to Book</a>
                         </div>
                     </div>
                 </div>
@@ -145,16 +198,28 @@
                     </h3>
                     <div class="lecture-list">
                         <div class="lecture-item">
-                            <span class="lecture-name" contenteditable="true">Chapter 1</span>
-                            <a href="https://systemch1.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <span class="lecture-name" contenteditable="true">Lecture 1</span>
+                            <a href="https://systemch1.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 2</span>
-                            <a href="https://systemlec2.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://systemlec2.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
-                            <span class="lecture-name" contenteditable="true">Lecture 3,4</span>
-                            <a href="https://lec34system.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <span class="lecture-name" contenteditable="true">Lecture 3</span>
+                            <a href="https://lec34system.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Lecture 4</span>
+                            <a href="https://chat.z.ai/space/d1fdr34jb8p0-art" class="lecture-btn" target="_blank">Click Here</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Lecture 5</span>
+                            <a href="https://chat.z.ai/space/v1kds3pc7790-art" class="lecture-btn" target="_blank">Click Here</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Lecture 6</span>
+                            <a href="https://chat.z.ai/space/e1cdk3ah7470-art" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -178,11 +243,19 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 1</span>
-                            <a href="https://drive.google.com/file/d/1MxTP22HnXCT7uZCmBeXYwn0jhIRqZxO-/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <a href="https://drive.google.com/file/d/1MxTP22HnXCT7uZCmBeXYwn0jhIRqZxO-/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 2</span>
-                            <a href="https://drive.google.com/file/d/1Ha-tRNNjC4D0X7ypIoAAvMwrHM9VF0aS/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <a href="https://drive.google.com/file/d/1Ha-tRNNjC4D0X7ypIoAAvMwrHM9VF0aS/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 6</span>
+                            <a href="https://drive.google.com/file/d/1xTQSsj6LdL7wwx1Do_UutAvm4txf1Mp_/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 7</span>
+                            <a href="https://drive.google.com/file/d/1bx-ucDGLd0VL0hjGiRYhVkLgCpPe-RO3/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
                     </div>
 
@@ -190,7 +263,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Main book</span>
-                            <a href="https://drive.google.com/file/d/1ktuuxkGDluWIOi_RUw7YkO0noE8pvGxu/view?usp=sharing" class="lecture-btn">Go to Book</a>
+                            <a href="https://drive.google.com/file/d/1ktuuxkGDluWIOi_RUw7YkO0noE8pvGxu/view?usp=sharing" class="lecture-btn" target="_blank">Go to Book</a>
                         </div>
                     </div>
                 </div>
@@ -203,11 +276,19 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 1</span>
-                            <a href="https://ch1eco.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://ch1eco.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
-                         <div class="lecture-item">
+                        <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 2</span>
-                            <a href="https://ch2eco.space.z.ai/" class="lecture-btn">Click Here </a>
+                            <a href="https://ch2eco.space.z.ai/" class="lecture-btn" target="_blank">Click Here </a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 6</span>
+                            <a href="https://chat.z.ai/space/c1yd937tfxb0-art" class="lecture-btn" target="_blank">Click Here </a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 7</span>
+                            <a href="https://chat.z.ai/space/u14d13zu5w21-art" class="lecture-btn" target="_blank">Click Here </a>
                         </div>
                     </div>
                 </div>
@@ -231,7 +312,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 1</span>
-                            <a href="#" class="lecture-btn">Click Here</a>
+                            <a href="#" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                     </div>
 
@@ -239,7 +320,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Main book</span>
-                            <a href="https://drive.google.com/file/d/1fsVv8t8GGQ-7scA99ModjZglH2X-B3FC/view?usp=sharing" class="lecture-btn">Go to Book</a>
+                            <a href="https://drive.google.com/file/d/1fsVv8t8GGQ-7scA99ModjZglH2X-B3FC/view?usp=sharing" class="lecture-btn" target="_blank">Go to Book</a>
                         </div>
                     </div>
                 </div>
@@ -252,7 +333,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">NA</span>
-                            <a href="#" class="lecture-btn">NA</a>
+                            <a href="#" class="lecture-btn" target="_blank">NA</a>
                         </div>
                     </div>
                 </div>
@@ -276,19 +357,19 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 1</span>
-                            <a href="https://drive.google.com/file/d/1xGF9UkRns9ecXF9m31baCmV3aTqwLerx/view?usp=sharing" class="lecture-btn">Go to Lecture</a>
+                            <a href="https://drive.google.com/file/d/1xGF9UkRns9ecXF9m31baCmV3aTqwLerx/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
                         </div>
                          <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 2</span>
-                            <a href="https://drive.google.com/file/d/1Rj_9L0sZdkBV-dlww4VfHChSIXw26voU/view?usp=sharing" class="lecture-btn">Go to Lecture</a>
+                            <a href="https://drive.google.com/file/d/1Rj_9L0sZdkBV-dlww4VfHChSIXw26voU/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
                         </div>
                          <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 3</span>
-                            <a href="https://drive.google.com/file/d/1ZhjGa4F3pghWC5ZArYj-WUMDm9zJx1Il/view?usp=sharing" class="lecture-btn">Go to Lecture</a>
+                            <a href="https://drive.google.com/file/d/1ZhjGa4F3pghWC5ZArYj-WUMDm9zJx1Il/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
                         </div>
                          <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 4</span>
-                            <a href="https://drive.google.com/file/d/1BxEz9L7QjF249FY6y2280Ipe0x5k8VQY/view?usp=sharing" class="lecture-btn">Go to Lecture</a>
+                            <a href="https://drive.google.com/file/d/1MVdJYn58yKgi2ng5bQ2TpdQqcyUGOxHH/view?usp=sharing" class="lecture-btn" target="_blank">Go to Lecture</a>
                         </div>
                     </div>
 
@@ -296,7 +377,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Main book</span>
-                            <a href="https://drive.google.com/file/d/18RYf6ADepn-cx0Dbji0rIaZtPf924gfD/view?usp=sharing" class="lecture-btn">Go to Book</a>
+                            <a href="https://drive.google.com/file/d/18RYf6ADepn-cx0Dbji0rIaZtPf924gfD/view?usp=sharing" class="lecture-btn" target="_blank">Go to Book</a>
                         </div>
                     </div>
                 </div>
@@ -309,19 +390,19 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 1</span>
-                            <a href="https://lec1hrm.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://lec1hrm.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 2 </span>
-                            <a href="https://lec2hrm.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://lec2hrm.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 3 </span>
-                            <a href="https://lec3hrm.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://lec3hrm.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Lecture 4 </span>
-                            <a href="https://lec4hrm.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://chat.z.ai/space/p1ud73mbkks0-art" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
 
                     </div>
@@ -346,11 +427,15 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 0: Introduction</span>
-                            <a href="https://drive.google.com/file/d/1dAwyIxUSLhg8L3WxH9agPiaAhBChrslR/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <a href="https://drive.google.com/file/d/1dAwyIxUSLhg8L3WxH9agPiaAhBChrslR/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 1</span>
-                            <a href="https://drive.google.com/file/d/1a2YSVqanafSxZWxvX-0-LaAfL5p3uKoy/view?usp=sharing" class="lecture-btn">Go to Chapter</a>
+                            <a href="https://drive.google.com/file/d/1a2YSVqanafSxZWxvX-0-LaAfL5p3uKoy/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
+                        </div>
+                        <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 2</span>
+                            <a href="https://drive.google.com/file/d/1K5SFD-lvG5i1McMvCJg4aECI7Hura9DW/view?usp=sharing" class="lecture-btn" target="_blank">Go to Chapter</a>
                         </div>
                     </div>
 
@@ -358,7 +443,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Mainbook</span>
-                            <a href="https://drive.google.com/file/d/15iK-h9dPzODWqat_8vYw0PxG6AJefcLS/view?usp=sharing" class="lecture-btn">Go to Book</a>
+                            <a href="https://drive.google.com/file/d/15iK-h9dPzODWqat_8vYw0PxG6AJefcLS/view?usp=sharing" class="lecture-btn" target="_blank">Go to Book</a>
                         </div>
                     </div>
                 </div>
@@ -371,11 +456,15 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 0 : intro</span>
-                            <a href="https://intropy.space.z.ai/" class="lecture-btn">Click Here</a>
+                            <a href="https://intropy.space.z.ai/" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Chapter 1</span>
-                            <a href="https://chat.z.ai/space/w11mr2xy3jr0-art" class="lecture-btn">Click Here</a>
+                            <a href="https://chat.z.ai/space/w11mr2xy3jr0-art" class="lecture-btn" target="_blank">Click Here</a>
+                        </div>
+                         <div class="lecture-item">
+                            <span class="lecture-name" contenteditable="true">Chapter 2</span>
+                            <a href="https://chat.z.ai/space/s1kdw3155nf0-art" class="lecture-btn" target="_blank">Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -399,7 +488,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">NA</span>
-                            <a href="#" class="lecture-btn">NA</a>
+                            <a href="#" class="lecture-btn" target="_blank">NA</a>
                         </div>
                     </div>
 
@@ -407,7 +496,7 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">Main book</span>
-                            <a href="https://drive.google.com/file/d/116eIBYgHCp4O37R2Fr30x0OYV0GXr5_9/view?usp=sharing" class="lecture-btn">Go to Book</a>
+                            <a href="https://drive.google.com/file/d/116eIBYgHCp4O37R2Fr30x0OYV0GXr5_9/view?usp=sharing" class="lecture-btn" target="_blank">Go to Book</a>
                         </div>
                     </div>
                 </div>
@@ -420,12 +509,13 @@
                     <div class="lecture-list">
                         <div class="lecture-item">
                             <span class="lecture-name" contenteditable="true">NA</span>
-                            <a href="#" class="lecture-btn">NA</a>
+                            <a href="#" class="lecture-btn" target="_blank">NA</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
     </main>
 
     <footer>
